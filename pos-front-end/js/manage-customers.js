@@ -31,12 +31,9 @@ btnSave.on('click', () => {
         name, contact, address
     };
 
-    /* Todo: Send a request to the server to save the customer */
-
-    /* 1. Create xhr object */
     const xhr = new XMLHttpRequest();
 
-    /* 2. Set an event listener to listen readystatechange */
+
     xhr.addEventListener('readystatechange', ()=> {
         if (xhr.readyState === 4){
             [txtName, txtAddress, txtContact, btnSave].forEach(elm => elm.removeAttr('disabled'));
@@ -56,13 +53,13 @@ btnSave.on('click', () => {
         }
     });
 
-    /* 3. Let's open the request */
+
     xhr.open('POST', 'http://localhost:8080/pos/customers', true);
 
-    /* 4. Let's set some request headers */
+
     xhr.setRequestHeader('Content-Type', 'application/json');
 
-    /* 5. Okay, time to send the request */
+
     xhr.send(JSON.stringify(customer));
 
     [txtName, txtAddress, txtContact, btnSave].forEach(elm => elm.attr('disabled', 'true'));
