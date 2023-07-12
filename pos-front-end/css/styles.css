@@ -91,3 +91,15 @@ main {
     display: none;
 }
 
+/*.ld-ext-right.running {*/
+/*    padding-right: 2.5em !important;*/
+/*}*/
+
+/*.btn, .dropdown-item, *[data-scrollto], .nav-link {*/
+/*    cursor: pointer;*/
+/*}*/
+/*.ld-ext-right, .ld-ext-left, .ld-ext-bottom, .ld-ext-top, .ld-over, .ld-over-inverse, .ld-over-full, .ld-over-full-inverse {*/
+/*    position: relative;*/
+/*    transition: all .3s;*/
+/*    transition-timing-function: ease-in;*/
+/*}*/
