@@ -24,6 +24,7 @@ public class CustomerController {
     @PatchMapping("/{id}")
     public ResponseEntity<?> updateCustomer(@PathVariable("id") int customerId,
                                             @RequestBody CustomerDTO customer) {
+        System.out.println("working");
         try (Connection connection = pool.getConnection()) {
             PreparedStatement stm = connection.prepareStatement
                     ("UPDATE customer SET name=?, address=?, contact=? WHERE id=?");
