@@ -185,3 +185,26 @@ function getCustomers(){
 getCustomers();
 $("#txt-search").on('input', ()=> getCustomers());
 
+
+$("#txt-search").on('input', ()=> getCustomers());
+
+
+
+tbodyElm.on('click','.delete',(eventData)=>{
+    const id=+$(eventData.target).parents("tr").children("td:first-child").text().replace('C',"");
+    console.log("deleteID "+id);
+    const xhr= new XMLHttpRequest();
+    const jxhr=$.ajax(`http://localhost:8080/pos/customers/${id}`,{
+        method: 'DELETE',xhr:()=>xhr
+    });
+    showProgress(xhr);
+    jxhr.done(()=>{
+        showToast('succes','Deleted','Customer Successfully Deleted');
+        getCustomers();
+    });
+    jxhr.fail(()=>{
+        showToast('error','Failed','Failed to Delete Customer');
+    });
+
+})
+
