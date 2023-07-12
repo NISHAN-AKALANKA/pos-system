@@ -81,6 +81,131 @@
         </ul>
     </div>
 </nav>
+<main>
+    <section class="d-flex justify-content-between border-bottom p-2">
+        <h2 class="m-0 align-self-center">Manage Items</h2>
+        <button id="btn-new-item" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#new-item-modal">New Item</button>
+    </section>
+    <section class="p-2">
+        <input id="txt-search" class="form-control text-center" type="text" placeholder="Search Item">
+    </section>
+    <section class="p-2">
+        <table id="tbl-items" class="table table-hover table-bordered">
+            <thead class="table-light">
+            <tr>
+                <th class="text-center">Code</th>
+                <th>Description</th>
+                <th class="d-none d-xl-table-cell">Qty</th>
+                <th class="contact text-center">Price</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">I001</td>
+                <td>Key-Board</td>
+                <td class="d-none d-xl-table-cell">50</td>
+                <td class="contact text-center">1500</td>
+                <td>
+                    <div class="actions d-flex gap-3 justify-content-center">
+                        <svg  data-bs-toggle="tooltip" data-bs-title="Edit Item" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                              class="bi bi-pencil-square edit" viewBox="0 0 16 16">
+                            <path
+                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd"
+                                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                        </svg>
+                        <svg data-bs-toggle="tooltip" data-bs-title="Delete Item" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                             class="bi bi-trash delete" viewBox="0 0 16 16">
+                            <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                            <path
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                        </svg>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td class="text-center" colspan="5">No Item records are found!</td>
+            </tr>
+            </tfoot>
+        </table>
+    </section>
+</main>
+<!-- Modal -->
+<div class="modal fade" id="new-item-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modal-header">Add New Item</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-3">
+                    <label for="txt-code" class="form-label">Item Code</label>
+                    <input type="text" class="form-control text-center" id="txt-code" placeholder="Item Code">
+                    <div class="invalid-feedback">
+                        Code can't be empty
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="txt-description" class="form-label">Description</label>
+                    <input type="text" class="form-control text-center" id="txt-description" placeholder="Eg. Mouse">
+                    <div class="invalid-feedback">
+                        Name can't be empty
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="txt-price" class="form-label">Unit Price</label>
+                    <input type="number" class="form-control text-center" id="txt-price" placeholder="Eg. 1500">
+                    <div class="invalid-feedback">
+                        Price must be entered
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="txt-quantity" class="form-label">Initial Stock</label>
+                    <input type="number" class="form-control text-center" id="txt-quantity" placeholder="Eg. 100">
+                    <div class="invalid-feedback">
+
+                    </div>
+                </div>
+            </div>
+            <!--            <div class="modal-footer d-flex justify-content-between">-->
+            <!--                <div id="loader">-->
+            <!--                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
+            <!--                </div>-->
+            <!--                <button id="btn-save" type="button" class="btn btn-primary">Save Item</button>-->
+            <!--            </div>-->
+            <div class="modal-footer d-flex flex-row-reverse justify-content-between">
+                <!--                    <div id="loader">-->
+                <!--                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
+                <!--                    </div>-->
+                <!--                    <button id="btn-save" type="button" class="btn btn-primary">Save Customer</button>-->
+
+                <div id="btn-save" class="btn btn-primary ld-ext-right"
+                     onclick="this.classList.toggle('running')">
+                    Save
+                    <div class="ld ld-ring ld-spin " id="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="toast" class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="liveToast" class="toast" data-bs-autohide="true" data-bs-delay="1000" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto"></strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
