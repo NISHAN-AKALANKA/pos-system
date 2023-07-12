@@ -5,7 +5,9 @@ import lk.ijse.dep10.pos.dto.ItemDTO;
 import lk.ijse.dep10.pos.entity.Customer;
 import lk.ijse.dep10.pos.entity.Item;
 import lk.ijse.dep10.pos.entity.OrderDetail;
+import lk.ijse.dep10.pos.entity.OrderDetailPK;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 import org.springframework.stereotype.Component;
 
 @Component
